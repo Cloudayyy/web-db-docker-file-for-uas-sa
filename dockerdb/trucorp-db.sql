@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS Trucorp;
+
+USE Trucorp;
+
+CREATE TABLE users (
+ID VARCHAR(4) NOT NULL,
+Nama VARCHAR(255) NOT NULL,
+Alamat VARCHAR(255) NOT NULL,
+Jabatan VARCHAR(255) NOT NULL,
+PRIMARY KEY(ID)
+);
+
+INSERT INTO users VALUES ('E001','Edwin','Jln. Kebanggaan No.19','Ketua Jabatan');
