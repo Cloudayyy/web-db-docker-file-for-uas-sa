@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  db:
+    container_name: trucorp-web-2.0_db
+    build:
+      dockerfile: dockerfile
+      context: ./dockerdb
+    ports:
+      - "6003:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: RootUAS
+      MYSQL_USER: UAS_SA
+      MYSQL_PASSWORD: UAS
+      MYSQL_DATABASE: Trucorp
+  web:
+    container_name: trucorp-web-2.0_web
+    build:
+      dockerfile: dockerfile
+      context: ./dockerweb
+    ports:
+      - "6002:80"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "6004:8080"
