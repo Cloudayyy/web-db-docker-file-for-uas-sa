@@ -3,29 +3,9 @@
 $link = mysqli_connect("db","UAS_SA","UAS","Trucorp"); 
 
 if (!$link){
-	echo "tidak bisa konek ke MySQL" . PHP_EOL; 
-	exit;
+    echo "tidak bisa konek ke MySQL" . PHP_EOL; 
+    exit;
 } 
-
-// echo "Sukses: Koneksi telah terbuat!" . PHP_EOL;
-// echo "Host Information: " . mysqli_get_host_info($link) . PHP_EOL;
-// mysqli_close($link);
-
-// if (!($state = $link->prepare("SELECT * FROM users WHERE Nama = ?"))){
-//     echo "Tidak bisa prepare statement!";
-//     exit;
-// }
-
-// $Theuser = 'Edwin';
-
-// if (!$state->bind_param('s', $Theuser)){
-//     echo "Tidak bisa membaca '$user'";
-//     exit;
-// }
-
-// $state->execute();
-// $state->bind_result($ID, $Nama, $Alamat, $Jabatan);
-// $state->close();
 
 ?>
 
@@ -71,5 +51,20 @@ if (!$link){
             }
         ?>
         </table>
+
+    <?php
+        $SQLstring2 = "SELECT COUNT(ID) AS "Total jumlah user" FROM users";
+        $QueryResult2 = $link->query($SQLstring2);
+    ?>
+        <table width='50%'><br>
+        <tr><th align='left'>Total jumlah user</th></tr><br>
+        <?php
+            while ($row = $QueryResult2->fetch_assoc()){
+        ?>
+            <tr><td><?= $row['Total jumlah user'] ?></td></tr></br>
+        <?php
+            }
+        ?>
+
 </body>
 </html>
