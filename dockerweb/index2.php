@@ -53,7 +53,7 @@ if (!$link){
         </table>
 
     <?php
-        $SQLstring2 = "SELECT COUNT(ID) AS "Total jumlah user" FROM users";
+        $SQLstring2 = "SELECT COUNT(ID) AS [Total jumlah user] FROM users";
         $QueryResult2 = $link->query($SQLstring2);
     ?>
         <table width='50%'><br>
