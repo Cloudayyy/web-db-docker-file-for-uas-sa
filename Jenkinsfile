@@ -6,7 +6,7 @@ node{
     stage(‘Build’) {
       steps {
         
-        sh ‘docker-compose -f /var/lib/jenkins/workspace/docker-test/web-db-docker-file-for-uas-sa/docker-compose.yml up --build’
+        sh ‘docker-compose --project-directory /root/Downloads/MAFEL/UAS_SA/trucorp-web-2.0/ up -d --build --remove-orphans’
       }
       
     }
