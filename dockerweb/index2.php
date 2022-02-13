@@ -51,6 +51,18 @@ if (!$link){
             }
         ?>
         </table>
+        
+    <?php
+        $SQLstring2 = "SELECT * FROM users";
 
+        if ($result2 = mysqli_query($link, $SQLstring2)) {
+            $totalRows = mysqli_num_rows($result2);
+
+            echo "";
+            echo "Total jumlah user: " . $totalRows;
+            mysqli_free_result($result2);
+        }
+        mysqli_close($link);
+    ?>
 </body>
 </html>
