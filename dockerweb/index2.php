@@ -52,19 +52,5 @@ if (!$link){
         ?>
         </table>
 
-    <?php
-        $SQLstring2 = "SELECT COUNT(ID) AS [Total jumlah user] FROM users";
-        $QueryResult2 = $link->query($SQLstring2);
-    ?>
-        <table width='50%'><br>
-        <tr><th align='left'>Total jumlah user</th></tr><br>
-        <?php
-            while ($row = $QueryResult2->fetch_assoc()){
-        ?>
-            <tr><td><?= $row['Total jumlah user'] ?></td></tr></br>
-        <?php
-            }
-        ?>
-
 </body>
 </html>
